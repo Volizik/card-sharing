@@ -9,7 +9,7 @@
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "eslint": "eslint -c .eslintrc-staged --ext js,jsx,ts,tsx ./",
-    "prettier": "prettier --write ./src/**/*.{tsx, ts}"
+    "prettier": "prettier --write ./src/**/*.{tsx,ts}"
   },
   "dependencies": {
     "@react-native-community/blur": "^3.6.0",

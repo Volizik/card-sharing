@@ -1,5 +1,7 @@
 import React, { FC } from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
+import { TouchableOpacity } from 'react-native-ui-lib';
+import { useNavigation } from '@react-navigation/native';
 
 export interface CardListItem {
   id: number;
@@ -8,15 +10,23 @@ export interface CardListItem {
   description: string;
 }
 
-export const CardListItem: FC<CardListItem> = ({ image, name, description }) => (
-  <View style={styles.container}>
-    <Image style={styles.image} source={{ uri: image }} />
-    <View style={styles.info}>
-      <Text style={styles.title}>{name}</Text>
-      <Text style={styles.description}>{description}</Text>
-    </View>
-  </View>
-);
+export const CardListItem: FC<CardListItem> = ({ image, name, description }) => {
+  const navigation = useNavigation();
+
+  const onPressHandler = () => {
+    navigation.navigate('Card');
+  };
+
+  return (
+    <TouchableOpacity style={styles.container} onPress={onPressHandler}>
+      <Image style={styles.image} source={{ uri: image }} />
+      <View style={styles.info}>
+        <Text style={styles.title}>{name}</Text>
+        <Text style={styles.description}>{description}</Text>
+      </View>
+    </TouchableOpacity>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
