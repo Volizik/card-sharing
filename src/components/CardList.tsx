@@ -1,8 +1,8 @@
 import React from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
-import { CardListItem, ICardListItem } from './CardListItem';
+import { CardListItem, CardListItemProps } from './CardListItem';
 
-const cardList: ICardListItem[] = [
+const cardList: CardListItemProps[] = [
   {
     id: 1,
     description: 'Скидка 10%',

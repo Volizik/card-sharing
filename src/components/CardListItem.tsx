@@ -3,14 +3,14 @@ import { Image, StyleSheet, Text, View } from 'react-native';
 import { TouchableOpacity } from 'react-native-ui-lib';
 import { useNavigation } from '@react-navigation/native';
 
-export interface CardListItem {
+export interface CardListItemProps {
   id: number;
   image: string;
   name: string;
   description: string;
 }
 
-export const CardListItem: FC<CardListItem> = ({ image, name, description }) => {
+export const CardListItem: FC<CardListItemProps> = ({ image, name, description }) => {
   const navigation = useNavigation();
 
   const onPressHandler = () => {
